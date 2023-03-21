@@ -42,7 +42,7 @@ import page.UserPointOfSalePage;
 
 public class TC_001 extends BaseTest  {
 	@Test
-	public void testmethod() throws FileNotFoundException, IOException, InterruptedException {
+	public void verifyAddedCustomerShowsInDropDrop() throws FileNotFoundException, IOException, InterruptedException {
 
 		String adminuserName=FileUtility.getProperty(configPath,"ADMINUSERNAME");
 		String adminPassword=FileUtility.getProperty(configPath,"ADMINPASSWORD");

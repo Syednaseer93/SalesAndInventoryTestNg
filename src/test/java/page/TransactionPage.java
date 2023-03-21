@@ -9,6 +9,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import genericutilities.DynamicXpathUtils;
+import genericutilities.WebDriverUtility;
 
 public class TransactionPage {
  
@@ -25,25 +26,21 @@ public class TransactionPage {
 	public void clickOnActivePage() {
 		activePage.click();
 	}
+	
 
 	public int getNoOfRowsInTable() {
 		int size=noOfRowsTable.size();
 		return size;
 	}
 	
-	String xPathCustomerFirstName="//tr[%replaceable%]/td[1]";
-	public String getCustFirstNameTable(int  row, WebDriver driver) {
-		String finalDynamicXpath1= DynamicXpathUtils.getDynamicXpath(xPathCustomerFirstName, row);
-		String customerFNameTable=driver.findElement(By.xpath(finalDynamicXpath1)).getText();
-		return customerFNameTable;
+	String xPathCustomerName="//tr[%replaceable%]/td[2]";
+	public String getCustNameTable(int  row, WebDriver driver) {
+		String finalDynamicXpath1= DynamicXpathUtils.getDynamicXpath(xPathCustomerName, row);
+		String customerNameTable=driver.findElement(By.xpath(finalDynamicXpath1)).getText();
+		return customerNameTable;
 	}
 	
-	String xPathCustomerLastName="//tr[%replaceable%]/td[2]";
-	public String getCustLastNameTable(int  row, WebDriver driver) {
-		String finalDynamicXpath2= DynamicXpathUtils.getDynamicXpath(xPathCustomerLastName, row);
-		String customerLNameTable=driver.findElement(By.xpath(finalDynamicXpath2)).getText();
-		return customerLNameTable;
-	}
+
 
 	String xPathNextPage="//ul/li[@class='paginate_button page-item ']/a[.='%replaceable%']";
 	public WebElement clickOnNextPage(String pageNo,WebDriver driver) {
@@ -51,27 +48,13 @@ public class TransactionPage {
 		WebElement nextPage=driver.findElement(By.xpath(finalDynamicXpath2));
 		return nextPage;
 	}
+	
 	public void clickToViewInvoice(int row, WebDriver driver) {
-//		String finalDynamicXpath= DynamicXpathUtils.getDynamicXpath(xPathPhoneNo, row);
-//		String customerNameTable=driver.findElement(By.xpath(finalDynamicXpath)).getText();
-		String finalDynamicXpath1= DynamicXpathUtils.getDynamicXpath(xPathCustomerLastName, row);
-		String customerLNameTable=driver.findElement(By.xpath(finalDynamicXpath1)).getText();
-		
-		String finalDynamicXpath2= DynamicXpathUtils.getDynamicXpath(xPathCustomerFirstName, row);
-		String customerFNameTable=driver.findElement(By.xpath(finalDynamicXpath2)).getText();
-		String customerNameFromTable=customerFNameTable+" "+customerLNameTable;
-		
-		driver.findElement(By.xpath("//td[.='"+customerNameFromTable+"']/../td[4]/a")).click();
+		String finalDynamicXpath1= DynamicXpathUtils.getDynamicXpath(xPathCustomerName, row);
+		String customerNameTable=driver.findElement(By.xpath(finalDynamicXpath1)).getText();
+		driver.findElement(By.xpath("//td[text()='"+customerNameTable+"']/../td[4]/a")).click();
 	}
 	
-	public String getActualcustomerNameFromTable(WebDriver driver, int row) {
-		String finalDynamicXpath1= DynamicXpathUtils.getDynamicXpath(xPathCustomerLastName, row);
-		String customerLNameTable=driver.findElement(By.xpath(finalDynamicXpath1)).getText();
-		
-		String finalDynamicXpath2= DynamicXpathUtils.getDynamicXpath(xPathCustomerFirstName, row);
-		String customerFNameTable=driver.findElement(By.xpath(finalDynamicXpath2)).getText();
-		String customerNameFromTable=customerFNameTable+" "+customerLNameTable;
-       return customerNameFromTable;
-	}
+
 	
 }

@@ -60,7 +60,7 @@ public class TC_002 extends BaseTest {
 
 		//ADD A NEW CUSTOMER DETAILS AND SUBMIT
 		pos.enterCustomerDetails(customerFirstName, customerLastName, customerPhoneNumber);
-		pos.submitCustomerDetails();
+		pos.clickSubmitAfterAddingCustDetails();
 		WebDriverUtility.acceptjSAlert(driver);
 
 		//LOGOUT OF USERPAGE

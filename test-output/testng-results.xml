@@ -2,20 +2,20 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-03-20T17:51:52 IST" name="Default suite" finished-at="2023-03-20T17:52:18 IST" duration-ms="26116">
+  <suite started-at="2023-03-21T13:50:42 IST" name="Default suite" finished-at="2023-03-21T13:51:03 IST" duration-ms="21364">
     <groups>
     </groups>
-    <test started-at="2023-03-20T17:51:52 IST" name="Default test" finished-at="2023-03-20T17:52:18 IST" duration-ms="26116">
-      <class name="script.TC_002">
-        <test-method is-config="true" signature="createReport()[pri:0, instance:script.TC_002@2d901eb0]" started-at="2023-03-20T17:51:51 IST" name="createReport" finished-at="2023-03-20T17:51:52 IST" duration-ms="577" status="PASS">
+    <test started-at="2023-03-21T13:50:42 IST" name="Default test" finished-at="2023-03-21T13:51:03 IST" duration-ms="21364">
+      <class name="script.TC_012">
+        <test-method is-config="true" signature="createReport()[pri:0, instance:script.TC_012@2d901eb0]" started-at="2023-03-21T13:50:41 IST" name="createReport" finished-at="2023-03-21T13:50:42 IST" duration-ms="523" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createReport -->
-        <test-method is-config="true" signature="openApp(java.lang.reflect.Method,java.lang.String)[pri:0, instance:script.TC_002@2d901eb0]" started-at="2023-03-20T17:51:52 IST" name="openApp" finished-at="2023-03-20T17:51:57 IST" duration-ms="4604" status="PASS">
+        <test-method is-config="true" signature="openApp(java.lang.reflect.Method,java.lang.String)[pri:0, instance:script.TC_012@2d901eb0]" started-at="2023-03-21T13:50:42 IST" name="openApp" finished-at="2023-03-21T13:50:47 IST" duration-ms="5004" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void script.TC_002.VerifyAddedCustomerPresentInTable()]]>
+                <![CDATA[public void script.TC_012.test5()]]>
               </value>
             </param>
             <param index="1">
@@ -27,26 +27,26 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openApp -->
-        <test-method signature="VerifyAddedCustomerPresentInTable()[pri:0, instance:script.TC_002@2d901eb0]" started-at="2023-03-20T17:51:57 IST" name="VerifyAddedCustomerPresentInTable" finished-at="2023-03-20T17:52:18 IST" duration-ms="21037" status="PASS">
+        <test-method signature="test5()[pri:0, instance:script.TC_012@2d901eb0]" started-at="2023-03-21T13:50:47 IST" name="test5" finished-at="2023-03-21T13:51:03 IST" duration-ms="15804" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- VerifyAddedCustomerPresentInTable -->
-        <test-method is-config="true" signature="closeApp(org.testng.ITestResult)[pri:0, instance:script.TC_002@2d901eb0]" started-at="2023-03-20T17:52:18 IST" name="closeApp" finished-at="2023-03-20T17:52:18 IST" duration-ms="415" status="PASS">
+        </test-method> <!-- test5 -->
+        <test-method is-config="true" signature="closeApp(org.testng.ITestResult)[pri:0, instance:script.TC_012@2d901eb0]" started-at="2023-03-21T13:51:03 IST" name="closeApp" finished-at="2023-03-21T13:51:03 IST" duration-ms="489" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=VerifyAddedCustomerPresentInTable status=SUCCESS method=TC_002.VerifyAddedCustomerPresentInTable()[pri:0, instance:script.TC_002@2d901eb0] output={null}]]]>
+                <![CDATA[[TestResult name=test5 status=SUCCESS method=TC_012.test5()[pri:0, instance:script.TC_012@2d901eb0] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeApp -->
-        <test-method is-config="true" signature="publishReport()[pri:0, instance:script.TC_002@2d901eb0]" started-at="2023-03-20T17:52:18 IST" name="publishReport" finished-at="2023-03-20T17:52:19 IST" duration-ms="508" status="PASS">
+        <test-method is-config="true" signature="publishReport()[pri:0, instance:script.TC_012@2d901eb0]" started-at="2023-03-21T13:51:03 IST" name="publishReport" finished-at="2023-03-21T13:51:04 IST" duration-ms="531" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- publishReport -->
-      </class> <!-- script.TC_002 -->
+      </class> <!-- script.TC_012 -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

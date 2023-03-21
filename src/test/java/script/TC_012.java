@@ -4,111 +4,82 @@ package script;
 import java.time.Duration;
 import java.util.HashMap;
 
+import org.apache.commons.lang3.RandomStringUtils;
+import org.apache.commons.math3.stat.descriptive.summary.Product;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Assert;
+import org.testng.annotations.Test;
 
+import genericutilities.BaseTest;
 import genericutilities.DatabaseUtility;
 import genericutilities.ExcelUtility;
 import genericutilities.FileUtility;
 import genericutilities.JavaUtility;
 import genericutilities.WebDriverUtility;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import page.AdminHomePage;
+import page.LoginPage;
+import page.ProductPage;
+import page.UserPointOfSalePage;
 
-public class TC_012 {
+public class TC_012 extends BaseTest{
+    @Test
+	public void test5(){
+	
+		String adminuserName=FileUtility.getProperty(configPath,"ADMINUSERNAME");
+		String adminPassword=FileUtility.getProperty(configPath,"ADMINPASSWORD");
+		String userUsername=FileUtility.getProperty(configPath,"USERUSERNAME");
+		String userPassword=FileUtility.getProperty(configPath,"USERPASSWORD");
 
-	public static void main(String[] args) throws InterruptedException {
-		DatabaseUtility du = new DatabaseUtility();
-		ExcelUtility eu = new ExcelUtility();
-		FileUtility fu = new FileUtility();
-		JavaUtility ju =  new JavaUtility();
-		WebDriverUtility wu = new WebDriverUtility();
+		String productName=ExcelUtility.getCellData("customer", "./data/getData.xlsx", 3, 1)+RandomStringUtils.randomNumeric(3);
 		
-		//OPEN BROWSER, MAXIMIZE PAE AND OPEN URL
-		ChromeOptions options = wu.setChromeOptionsDisableNotifications();
-		WebDriverManager.chromedriver().setup();
-		ChromeDriver driver = new ChromeDriver(options);
-		wu.maximizePage(driver);
-		String url=fu.getPropertyValue("url");
-		driver.get(url);
-		wu.waitTillPageLoad(driver, 15);
-		
-		//TAKE DATA FROM EXCEL AND STORE IT IN HASHMAP
-		int row = eu.getLastRowNumber("customer","./data/getData.xlsx");
-		HashMap<String,String> hm= new HashMap<String,String>();
-		for(int i=0;i<=row;i++) {
-			String key=eu.getCellData("customer","./data/getData.xlsx",i,0);
-			String value=eu.getCellData("customer","./data/getData.xlsx",i,1);
-			hm.put(key, value);
-		}	
-		String productCode=hm.get("productCode")+ju.getRandomNumber(2);
-		String productName=hm.get("productName")+ju.getRandomString(2);
-		String categoryName=hm.get("categoryName");
-		String supplierName=hm.get("supplierName");
-		String quantity=hm.get("quantity")+ju.getRandomNumber(1);
-		String onHand=hm.get("onHand")+ju.getRandomNumber(3);
-		String productDescription=hm.get("productDescription")+ju.getRandomString(50);
-		String price=hm.get("price")+ju.getRandomNumber(10);
-		String date=hm.get("date");
-
-		String adminuserName=fu.getPropertyValue("adminuserName");
-		String adminPassword=fu.getPropertyValue("adminPassword");
-		String userUsername=fu.getPropertyValue("userUsername");
-		String userPassword=fu.getPropertyValue("userPassword");
+		String productCode=RandomStringUtils.randomNumeric(3);
+		String categoryName=ExcelUtility.getCellData("customer", "./data/getData.xlsx", 6, 1);
+		String supplierName=ExcelUtility.getCellData("customer", "./data/getData.xlsx", 7, 1);
+		String quantity=RandomStringUtils.randomNumeric(2);
+		String onHand=RandomStringUtils.randomNumeric(2);
+		String productDescription=RandomStringUtils.randomAlphabetic(10);
+		String price=RandomStringUtils.randomNumeric(2);
+		String date=ExcelUtility.getCellData("customer", "./data/getData.xlsx", 8, 1);
 
 		//LOGIN TO ADMIN PAGE
-		driver.findElement(By.name("user")).sendKeys(adminuserName);
-		driver.findElement(By.name("password")).sendKeys(adminPassword);
-		driver.findElement(By.name("btnlogin")).click();
-		wu.acceptjSAlert(driver);
-
+		LoginPage lp = new LoginPage(driver);
+		lp.setUsername(adminuserName);
+		lp.setPassword(adminPassword);
+		lp.clickLoginButton();
+		WebDriverUtility.acceptjSAlert(driver);
+		
 		//CLICK ON PRODUCT 
-		driver.findElement(By.xpath("//span[.='Product']")).click();
-
+		AdminHomePage ahm = new AdminHomePage(driver);
+		ahm.clickOnProductModule();
+		
 		//CREATE A NEW PRODUCT
-		driver.findElement(By.xpath("//h4[@class='m-2 font-weight-bold text-primary']/a/i")).click();
-
+		ProductPage pp = new ProductPage(driver);
+		pp.clickOnAddProductIcon();
+		
 		//ENTER  PRODUCT DETAILS AND SUBMIT
-		driver.findElement(By.xpath("//form[@action='pro_transac.php?action=add']/div/input[@name='prodcode']")).sendKeys(productCode);
-		driver.findElement(By.xpath("//form[@action='pro_transac.php?action=add']/div/input[@name='name']")).sendKeys(productName);
-		WebElement addProduct=driver.findElement(By.xpath("//form[@action='pro_transac.php?action=add']/div/textarea"));
-		wu.waitUntilElementClickable(driver, addProduct, 15);
-		driver.findElement(By.xpath("//form[@action='pro_transac.php?action=add']/div/textarea")).sendKeys(productDescription);
-
-		driver.findElement(By.xpath("//form[@action='pro_transac.php?action=add']/div/input[@name='quantity']")).sendKeys(quantity);
-		driver.findElement(By.xpath("//form[@action='pro_transac.php?action=add']/div/input[@name='onhand']")).sendKeys(onHand);
-		driver.findElement(By.xpath("//form[@action='pro_transac.php?action=add']/div/input[@name='price']")).sendKeys(price);
-
-		WebElement category=driver.findElement(By.xpath("//select[@name='category']"));
-		WebElement supplier = driver.findElement(By.xpath("//select[@name='supplier']"));
-		Thread.sleep(1000);
-		wu.selectByVisibleText(category,"Monitor");
-		wu.selectByVisibleText(supplier,"google");
-
-		driver.findElement(By.xpath("//div[@class='form-group']/input[@name='datestock']")).click();
-		driver.findElement(By.xpath("//div[@class='form-group']/input[@name='datestock']")).sendKeys(date);
-		driver.findElement(By.xpath("//form[@action='pro_transac.php?action=add']/button[@class='btn btn-success']")).click();
-
+		pp.enteringProductDetails(productCode, productName, productDescription, quantity, onHand, categoryName, supplierName, price, date);
+		pp.clickOnSubmitProductDetails();
+		
 		//CLICK ON INVENTORY
-		driver.findElement(By.xpath("//span[.='Inventory']")).click();
+		ahm.clickOnInventoryModule();
 
 		//SEARCH FOR THE PRODUCT CREATED IN ALL THE PAGES
-		int totalPages=10;	
+		int totalPages=12;	
 		boolean flag=false;
-		String productNameFromTable="";
-		int count=0;
+		String productCodeFromTable="";
 		for(int p=1;p<=totalPages;p++) {
-			WebElement activePage = driver.findElement(By.xpath("//ul/li[@class='paginate_button page-item active']/a"));
-			activePage.click();
+			pp.clickOnActivePage();
 
-			int rows=driver.findElements(By.xpath("//tbody/tr")).size();
+			int rows=pp.getNoOfRowsInTable();
 			for(int r=1;r<=rows;r++) {
-				productNameFromTable=driver.findElement(By.xpath("//tr["+r+"]/td[2]")).getText();
-				if(productNameFromTable.equals(productName)) {
+				productCodeFromTable=pp.getProductCodeFromTable(r, driver);
+				if(productCodeFromTable.equals(productCode)) {
 					System.out.println(productName);
-					Assert.assertEquals(productNameFromTable, productName);
+					Assert.assertEquals(productCodeFromTable, productCode);
 					flag=true;
 					break;				
 				}
@@ -118,22 +89,23 @@ public class TC_012 {
 			}
 			else {
 				String pageNo=Integer.toString(p+1);
-				driver.findElement(By.xpath("//ul/li[@class='paginate_button page-item ']/a[.='"+pageNo+"']")).click();
+				pp.clickOnNextPage(pageNo, driver);
 			}
 		}	
 		//LOGOUT OF ADMIN PAGE
-		driver.findElement(By.xpath("//ul[@class='navbar-nav ml-auto']/li[2]/a/span")).click();
-		driver.findElement(By.xpath("//a[@data-target='#logoutModal']")).click();
-		driver.findElement(By.linkText("Logout")).click();
-  	/******************************************************************************************************/
+		ahm.clickOnProfileIcon();
+		ahm.clickOnLogoutLink();
+		ahm.clickOnButton();
+  	/*****************************************************************************************************/
 		//LOGIN USER PAGE
-		driver.findElement(By.name("user")).sendKeys(userUsername);
-		driver.findElement(By.name("password")).sendKeys(userPassword);
-		driver.findElement(By.name("btnlogin")).click();
-		driver.switchTo().alert().accept();
+		lp.setUsername(userUsername);
+		lp.setPassword(userPassword);
+		lp.clickLoginButton();
+		WebDriverUtility.acceptjSAlert(driver);
 
-		driver.findElement(By.xpath("//a[.='"+categoryName+"']")).click();
-		String actualProductName=driver.findElement(By.xpath("//h6[.='"+productName+"']")).getText();
-		Assert.assertEquals(actualProductName, productName);
+		UserPointOfSalePage pos = new UserPointOfSalePage(driver);
+		pos.clickOnCategory(categoryName, driver);
+		String productNameFromUserPage=pos.getProductName(productName, driver);
+		Assert.assertEquals(productNameFromUserPage, productName);
 	}
 }

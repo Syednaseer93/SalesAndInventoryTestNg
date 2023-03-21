@@ -18,7 +18,7 @@ public class CustomerPage {
 	@FindBy(xpath="//span[text()='Customer']")
 	private WebElement CustomerIcon;
 	
-	@FindBy(xpath="//a[@data-target='#poscustomerModal']/i")
+	@FindBy(xpath="//a[@data-target='#customerModal']/i")
 	private WebElement addCustomerIcon;
 	
 	@FindBy(xpath="//ul/li[@class='paginate_button page-item active']/a")

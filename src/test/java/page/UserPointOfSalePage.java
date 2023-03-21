@@ -1,11 +1,13 @@
 package page;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
+import genericutilities.DynamicXpathUtils;
 import genericutilities.WebDriverUtility;
 
 public class UserPointOfSalePage extends WebDriverUtility {
@@ -29,8 +31,11 @@ public class UserPointOfSalePage extends WebDriverUtility {
 	@FindBy(xpath="//form[@action='cust_pos_trans.php?action=add']/div/input[@name='phonenumber']")
 	private WebElement customerPhoneNumber;
 	
-	@FindBy(xpath="//form[@action='cust_pos_trans.php?action=add']/button[@type='submit']")
+	@FindBy(xpath="//button[.='SUBMIT']")
 	private WebElement submitCustomerDetails;
+	
+	@FindBy(xpath="//form[@action='cust_pos_trans.php?action=add']/button[@type='submit']")
+	private WebElement clickSubmitAfterCustDetails;
 	
 	@FindBy(xpath="//button[.='SUBMIT']")
 	private WebElement submitOrder;
@@ -54,6 +59,9 @@ public class UserPointOfSalePage extends WebDriverUtility {
 	public void submitCustomerDetails() {
 		submitCustomerDetails.click();
 	}
+	public void clickSubmitAfterAddingCustDetails() {
+		clickSubmitAfterCustDetails.click();
+	}
 	public void enterCustomerDetails(String fName, String lName, String phoneNo) {
 		customerFirstName.sendKeys(fName);
 		customerLastName.sendKeys(lName);
@@ -75,5 +83,19 @@ public class UserPointOfSalePage extends WebDriverUtility {
 		proceedToPaymentButton.click();
 	}
 	
-	
+	public String getActualAlertMessage(WebDriver driver) {
+		String actualAlertMessage=driver.switchTo().alert().getText();
+		return actualAlertMessage;
+	}
+	String xPath="//a[.='%replaceable%']";
+	public void clickOnCategory(String catogoryName, WebDriver driver) {
+		String finalDXpathCatName=DynamicXpathUtils.getDynamicXpath(xPath, catogoryName);
+		driver.findElement(By.xpath(finalDXpathCatName)).click();
+	}
+	String xPath2="//h6[.='%replaceable%']";
+	public String getProductName(String prodName, WebDriver driver) {
+		String finalDXpathProdName=DynamicXpathUtils.getDynamicXpath(xPath2, prodName);
+		String productName=driver.findElement(By.xpath(finalDXpathProdName)).getText();
+		return productName;
+	}
 }

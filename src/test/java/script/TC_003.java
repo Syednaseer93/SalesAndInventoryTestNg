@@ -9,6 +9,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
+import org.testng.annotations.Test;
 
 import genericutilities.BaseTest;
 import genericutilities.DatabaseUtility;
@@ -24,6 +25,7 @@ import page.UserHomePage;
 import page.UserPointOfSalePage;
 
 public class TC_003 extends BaseTest {
+	@Test
 	public void VerifyInvoice() {
 		String adminuserName=FileUtility.getProperty(configPath,"ADMINUSERNAME");
 		String adminPassword=FileUtility.getProperty(configPath,"ADMINPASSWORD");
@@ -32,7 +34,6 @@ public class TC_003 extends BaseTest {
 
 		String customerFirstName=ExcelUtility.getCellData("customer", "./data/getData.xlsx", 0, 1);
 		String customerLastName=ExcelUtility.getCellData("customer", "./data/getData.xlsx", 1, 1);
-		String customerPhoneNumber=ExcelUtility.getCellData("customer", "./data/getData.xlsx", 2, 1);
 		String productName=ExcelUtility.getCellData("customer", "./data/getData.xlsx", 3, 1);
 		String productQuantity= ExcelUtility.getCellData("customer", "./data/getData.xlsx", 4, 1);
 		//LOGIN TO USERPAGE
@@ -61,7 +62,6 @@ public class TC_003 extends BaseTest {
 	    WebDriverUtility.acceptjSAlert(driver);
 
 		//LOGOUT OF USER PAGE
-		lp.setUsername(amount);
 		uhp.clickOnProfileIcon();
 		uhp.clickOnLogoutLink();
 		uhp.clickOnButton();
@@ -79,14 +79,14 @@ public class TC_003 extends BaseTest {
 
 		//NAVIGATE EVERY PAGE TO CHECK FOR TRANSACTION NUMBER(PHONE NUMBER)
 		TransactionPage tp = new TransactionPage(driver);
-		int totalPages=69;	
+		int totalPages=20;	
 		boolean flag=false;
 		String customerNameFromTable="";
 		for(int p=1;p<=totalPages;p++) {
 			tp.clickOnActivePage();
 			int rows=tp.getNoOfRowsInTable();
 			for(int r=1;r<=rows;r++) {
-				customerNameFromTable=tp.getActualcustomerNameFromTable(driver,r);
+				customerNameFromTable=tp.getCustNameTable(r, driver);
 				if(customerNameFromTable.equals(customerFirstName+" "+customerLastName)) {
 					flag=true;
 					tp.clickToViewInvoice(r, driver);
@@ -105,7 +105,7 @@ public class TC_003 extends BaseTest {
 		
 		//CHECK IF THE NAME IS PRESENT IN INVOICE
 
-		Assert.assertEquals(customerNameTable,customerFirstName+" "+customerLastName);
+		Assert.assertEquals(customerNameFromTable,customerFirstName+" "+customerLastName);
 			
 	}
 }
