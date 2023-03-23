@@ -55,8 +55,8 @@ public class ProductPage {
 	@FindBy(xpath="//form[@action='pro_transac.php?action=add']/button[@class='btn btn-success']")
 	private WebElement submitProductDetails;
 
+	
 	String xpath="//tr[%replaceable%]/td[1]";
-
 	public String getProductCodeFromTable(int  row, WebDriver driver) {
 		String finalXpathProductCode=DynamicXpathUtils.getDynamicXpath(xpath, row);
 		String prodCodeTable=driver.findElement(By.xpath(finalXpathProductCode)).getText();
@@ -70,13 +70,25 @@ public class ProductPage {
 	}
 
 
-	public void enteringProductDetails(String pCode,String pName,String pDesc,String pQuan,String onhand,String categoryText, String supplierText,String prodPrice, String dateStock) {
+	public void enteringProductDetails(WebDriver driver, String pCode,String pName,String pDesc,String pQuan,String onhand,String categoryText, String supplierText,String prodPrice, String dateStock) {
+		WebDriverUtility.waitUntilElementClickable(driver, productCode);
 		productCode.sendKeys(pCode);
+		
+		WebDriverUtility.waitUntilElementClickable(driver, productName);
 		productName.sendKeys(pName);
+		
+		WebDriverUtility.waitUntilElementClickable(driver, productDescription);
 		productDescription.sendKeys(pDesc);
+	
+		WebDriverUtility.waitUntilElementClickable(driver, productQuantity);
 		productQuantity.sendKeys(pQuan);
+		
+		WebDriverUtility.waitUntilElementClickable(driver, onHand);
 		onHand.sendKeys(onhand);
+		
+		WebDriverUtility.waitUntilElementClickable(driver, price);
 		price.sendKeys(prodPrice);
+		
 		WebDriverUtility.selectByVisibleText(category, categoryText);
 		WebDriverUtility.selectByVisibleText(supplier, supplierText);
 		dateStockIn.click();

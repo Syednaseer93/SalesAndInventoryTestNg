@@ -30,13 +30,13 @@ import com.aventstack.extentreports.reporter.configuration.Theme;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class BaseTest extends FileUtility implements IAutoConst{
+public class BaseTest implements IAutoConst{
 
 	public WebDriver driver;
 	public WebDriverWait wait;
 	public ExtentTest extentTest;
-	public String configPath="";
-
+    public String configPath="";
+    
 	@BeforeSuite
 	public void createReport() {
 		ExtentSparkReporter spark=new ExtentSparkReporter(REPORT_PATH);
@@ -57,7 +57,7 @@ public class BaseTest extends FileUtility implements IAutoConst{
 		String testName=testMethod.getName();
 		extentTest = EXTENTREPORTS.createTest(testName);
 
-		String browser = getProperty(configPath,"BROWSER");
+		String browser = FileUtility.getProperty(configPath,"BROWSER");
 		extentTest.log(Status.INFO, "Browser is:"+browser);
 
 
@@ -89,17 +89,17 @@ public class BaseTest extends FileUtility implements IAutoConst{
 
 
 
-		String strITO = getProperty(configPath,"ITO");
+		String strITO = FileUtility.getProperty(configPath,"ITO");
 		int iITO=Integer.parseInt(strITO);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(iITO));
 		extentTest.log(Status.INFO, "Set the ITO:"+iITO);
 
-		String strETO = getProperty(configPath,"ETO");
+		String strETO = FileUtility.getProperty(configPath,"ETO");
 		int iETO=Integer.parseInt(strETO);
 		wait=new WebDriverWait(driver, Duration.ofSeconds(iETO));
 		extentTest.log(Status.INFO, "Set the ETO:"+iETO);
 
-		String appURL = getProperty(configPath,"APPURL");
+		String appURL = FileUtility.getProperty(configPath,"APPURL");
 		driver.get(appURL);
 		
 		extentTest.log(Status.INFO, "Enter the URL:"+appURL);

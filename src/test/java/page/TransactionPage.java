@@ -41,7 +41,6 @@ public class TransactionPage {
 	}
 	
 
-
 	String xPathNextPage="//ul/li[@class='paginate_button page-item ']/a[.='%replaceable%']";
 	public WebElement clickOnNextPage(String pageNo,WebDriver driver) {
 		String finalDynamicXpath2= DynamicXpathUtils.getDynamicXpath(xPathNextPage, pageNo);

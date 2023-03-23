@@ -283,17 +283,17 @@ public class WebDriverUtility {
 		}
 	}
 
-	public void waitUntilElementVisible(WebDriver driver, WebElement element, int duration) {
+	public static void waitUntilElementVisible(WebDriver driver, WebElement element, int duration) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(duration));
 		wait.until(ExpectedConditions.visibilityOf(element));
 	}
 
 
-	public void waitUntilElementClickable(WebDriver driver, WebElement element, int duration) {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(duration));
+	public static void waitUntilElementClickable(WebDriver driver, WebElement element) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
 		wait.until(ExpectedConditions.elementToBeClickable(element));
 	}
-	public void waitUntilTitleContains(WebDriver driver, WebElement element, int duration,String title) {
+	public static void waitUntilTitleContains(WebDriver driver, WebElement element, int duration,String title) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(duration));
 		wait.until(ExpectedConditions.titleContains(title));
 	}

@@ -10,7 +10,6 @@ public class AdminHomePage {
 	public AdminHomePage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
 	}
-	
 	@FindBy(xpath="//span[text()='Customer']")
 	private WebElement customerModule;
 	

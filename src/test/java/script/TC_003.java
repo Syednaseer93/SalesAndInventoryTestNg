@@ -1,32 +1,18 @@
 package script;
-
-
-import java.time.Duration;
-import java.util.HashMap;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
 import genericutilities.BaseTest;
-import genericutilities.DatabaseUtility;
 import genericutilities.ExcelUtility;
 import genericutilities.FileUtility;
-import genericutilities.JavaUtility;
 import genericutilities.WebDriverUtility;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import page.AdminHomePage;
 import page.LoginPage;
 import page.TransactionPage;
 import page.UserHomePage;
 import page.UserPointOfSalePage;
-
 public class TC_003 extends BaseTest {
-	@Test
-	public void VerifyInvoice() {
+	@Test(priority = 2)
+	public void verifyCustomerNameShowsInInvoice() {
 		String adminuserName=FileUtility.getProperty(configPath,"ADMINUSERNAME");
 		String adminPassword=FileUtility.getProperty(configPath,"ADMINPASSWORD");
 		String userUsername=FileUtility.getProperty(configPath,"USERUSERNAME");
@@ -36,19 +22,20 @@ public class TC_003 extends BaseTest {
 		String customerLastName=ExcelUtility.getCellData("customer", "./data/getData.xlsx", 1, 1);
 		String productName=ExcelUtility.getCellData("customer", "./data/getData.xlsx", 3, 1);
 		String productQuantity= ExcelUtility.getCellData("customer", "./data/getData.xlsx", 4, 1);
+
 		//LOGIN TO USERPAGE
 		LoginPage lp = new LoginPage(driver);
 		lp.setUsername(userUsername);
 		lp.setPassword(userPassword);
 		lp.clickLoginButton();
 		WebDriverUtility.acceptjSAlert(driver);
-		
+
 		//CHOOSE PRODUCT CATEGORY AND ENTER PRODUCT QUANTITY AND SUBMIT
 		UserHomePage uhp = new UserHomePage(driver);
 		uhp.clickOnProductCategory();
 		uhp.enterProductQuantity(productQuantity, productName, driver);
 		uhp.clickOnAddProduct(productName, driver);
-		
+
 		//SELECT ANY CUSTOMER FROM LIST AND SUBMIT
 		UserPointOfSalePage pos = new UserPointOfSalePage(driver);
 		pos.selectCustomer(customerFirstName+" "+customerLastName);		
@@ -56,23 +43,22 @@ public class TC_003 extends BaseTest {
 
 		//ENTER THE AMOUNT TO BE PAID AND SUBMIT
 		pos.chooseProductCategory();
-		String amount=pos.getTextOfProductAmount();
+		pos.getTextOfProductAmount();
 		pos.enterProductAmountP1();
 		pos.ProceedToPaymentClick();
-	    WebDriverUtility.acceptjSAlert(driver);
+		WebDriverUtility.acceptjSAlert(driver);
 
 		//LOGOUT OF USER PAGE
 		uhp.clickOnProfileIcon();
 		uhp.clickOnLogoutLink();
 		uhp.clickOnButton();
-		
 		/*****************************************************************************************/
 		//LOGIN TO ADMIN PAGE
 		lp.setUsername(adminuserName);
 		lp.setPassword(adminPassword);
 		lp.clickLoginButton();
 		WebDriverUtility.acceptjSAlert(driver);
-		
+
 		//CLICK ON TRANSACTION MODULE
 		AdminHomePage ahm = new AdminHomePage(driver);
 		ahm.clickOnTransactionModule();
@@ -101,11 +87,7 @@ public class TC_003 extends BaseTest {
 				tp.clickOnNextPage(pageNo, driver).click();
 			}
 		}	
-		
-		
 		//CHECK IF THE NAME IS PRESENT IN INVOICE
-
-		Assert.assertEquals(customerNameFromTable,customerFirstName+" "+customerLastName);
-			
+		Assert.assertEquals(customerNameFromTable,customerFirstName+" "+customerLastName);			
 	}
 }

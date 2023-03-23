@@ -1,34 +1,18 @@
 package script;
-
-
-import java.time.Duration;
-import java.util.HashMap;
-import java.util.List;
-
 import org.apache.commons.lang3.RandomStringUtils;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
 import genericutilities.BaseTest;
-import genericutilities.DatabaseUtility;
 import genericutilities.ExcelUtility;
 import genericutilities.FileUtility;
-import genericutilities.JavaUtility;
 import genericutilities.WebDriverUtility;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import page.CustomerPage;
 import page.LoginPage;
 import page.UserHomePage;
 import page.UserPointOfSalePage;
-
 public class TC_002 extends BaseTest {
-	@Test
-	public void VerifyAddedCustomerPresentInTable() {
+	@Test(priority = 1)
+	public void VerifyUSPAddedCustomerPresentInAdminPage() {
 		//COMMON DATA
 		String adminuserName=FileUtility.getProperty(configPath,"ADMINUSERNAME");
 		String adminPassword=FileUtility.getProperty(configPath,"ADMINPASSWORD");
@@ -59,7 +43,7 @@ public class TC_002 extends BaseTest {
 		pos.clickOnAddCustomer();
 
 		//ADD A NEW CUSTOMER DETAILS AND SUBMIT
-		pos.enterCustomerDetails(customerFirstName, customerLastName, customerPhoneNumber);
+		pos.enterCustomerDetails(driver,customerFirstName, customerLastName, customerPhoneNumber);
 		pos.clickSubmitAfterAddingCustDetails();
 		WebDriverUtility.acceptjSAlert(driver);
 
@@ -67,8 +51,7 @@ public class TC_002 extends BaseTest {
 		uhp.clickOnProfileIcon();
 		uhp.clickOnLogoutLink();
 		uhp.clickOnButton();
-		
-		/******************************************************************************/
+	   /************************************************************************************/
      	//LOGIN TO ADMIN PAGE
 		lp.setUsername(adminuserName);
 		lp.setPassword(adminPassword);

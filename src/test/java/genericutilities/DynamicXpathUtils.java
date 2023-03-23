@@ -1,6 +1,7 @@
 package genericutilities;
 
 public class DynamicXpathUtils {
+	
 	public static String getDynamicXpath(String xpath, String value) {
 		String dynamicXpath = xpath.replaceAll("%replaceable%", value);
 		return dynamicXpath;

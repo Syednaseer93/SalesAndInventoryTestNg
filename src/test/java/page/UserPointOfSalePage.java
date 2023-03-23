@@ -62,9 +62,14 @@ public class UserPointOfSalePage extends WebDriverUtility {
 	public void clickSubmitAfterAddingCustDetails() {
 		clickSubmitAfterCustDetails.click();
 	}
-	public void enterCustomerDetails(String fName, String lName, String phoneNo) {
+	public void enterCustomerDetails(WebDriver driver,String fName, String lName, String phoneNo) {
+		WebDriverUtility.waitUntilElementClickable(driver, customerFirstName);
 		customerFirstName.sendKeys(fName);
+		
+		WebDriverUtility.waitUntilElementClickable(driver, customerLastName);
 		customerLastName.sendKeys(lName);
+		
+		WebDriverUtility.waitUntilElementClickable(driver, customerPhoneNumber);
 		customerPhoneNumber.sendKeys(phoneNo);
 	}
 	public void chooseProductCategory() {
