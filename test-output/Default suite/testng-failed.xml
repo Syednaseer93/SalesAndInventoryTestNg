@@ -3,15 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="script.TC_integeration_01">
+      <class name="genericutilities.DataProviderMethod">
         <methods>
-          <include name="publishReport"/>
-          <include name="closeApp"/>
-          <include name="checkCustomerNamesAreSorted"/>
-          <include name="createReport"/>
-          <include name="openApp"/>
+          <include name="useData"/>
         </methods>
-      </class> <!-- script.TC_integeration_01 -->
+      </class> <!-- genericutilities.DataProviderMethod -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
