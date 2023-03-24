@@ -46,7 +46,7 @@ public class BaseTest implements IAutoConst{
 
 	@AfterSuite
 	public void publishReport() {
-		EXTENTREPORTS.flush();	
+		EXTENTREPORTS.flush();
 	}
 
 	@Parameters({"property"})

@@ -53,7 +53,7 @@ public class CustomerPage {
 	public void clickOnAddCustomer() {
 		addCustomerIcon.click();
 	}
-	public void enterCustomerDetails(WebDriver driver, String fName, String lName, String phoneNo) {
+	public void enterCustomerDetailsAndSubmit(WebDriver driver, String fName, String lName, String phoneNo) {
 
 		WebDriverUtility.waitUntilElementClickable(driver, customerFirstName);
 		customerFirstName.sendKeys(fName);
@@ -63,14 +63,15 @@ public class CustomerPage {
 
 		WebDriverUtility.waitUntilElementClickable(driver, customerPhoneNumber);
 		customerPhoneNumber.sendKeys(phoneNo);
+		
+		WebDriverUtility.waitUntilElementClickable(driver, submitCustomerDetails);
+		submitCustomerDetails.click();
 	}
 	public void clickOnActivePage() {
 		activePage.click();
 	}
 
-	public void submitCustomerDetails() {
-		submitCustomerDetails.click();
-	}
+
 	
 	public void clickOnNextButtonWithOutPN() {
 		nextButton.click();

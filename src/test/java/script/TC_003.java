@@ -11,7 +11,7 @@ import page.TransactionPage;
 import page.UserHomePage;
 import page.UserPointOfSalePage;
 public class TC_003 extends BaseTest {
-	@Test(priority = 2)
+	@Test(priority = 2,retryAnalyzer = genericutilities.Retry.class)
 	public void verifyCustomerNameShowsInInvoice() {
 		String adminuserName=FileUtility.getProperty(configPath,"ADMINUSERNAME");
 		String adminPassword=FileUtility.getProperty(configPath,"ADMINPASSWORD");
@@ -25,10 +25,7 @@ public class TC_003 extends BaseTest {
 
 		//LOGIN TO USERPAGE
 		LoginPage lp = new LoginPage(driver);
-		lp.setUsername(userUsername);
-		lp.setPassword(userPassword);
-		lp.clickLoginButton();
-		WebDriverUtility.acceptjSAlert(driver);
+		lp.enterLoginDetailsAndSubmit(userUsername, userPassword,driver);
 
 		//CHOOSE PRODUCT CATEGORY AND ENTER PRODUCT QUANTITY AND SUBMIT
 		UserHomePage uhp = new UserHomePage(driver);
@@ -49,15 +46,10 @@ public class TC_003 extends BaseTest {
 		WebDriverUtility.acceptjSAlert(driver);
 
 		//LOGOUT OF USER PAGE
-		uhp.clickOnProfileIcon();
-		uhp.clickOnLogoutLink();
-		uhp.clickOnButton();
+		uhp.logoutOfUserPage();
 		/*****************************************************************************************/
 		//LOGIN TO ADMIN PAGE
-		lp.setUsername(adminuserName);
-		lp.setPassword(adminPassword);
-		lp.clickLoginButton();
-		WebDriverUtility.acceptjSAlert(driver);
+		lp.enterLoginDetailsAndSubmit(adminuserName, adminPassword, driver);
 
 		//CLICK ON TRANSACTION MODULE
 		AdminHomePage ahm = new AdminHomePage(driver);

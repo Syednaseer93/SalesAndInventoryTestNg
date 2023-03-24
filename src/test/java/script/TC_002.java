@@ -11,7 +11,7 @@ import page.LoginPage;
 import page.UserHomePage;
 import page.UserPointOfSalePage;
 public class TC_002 extends BaseTest {
-	@Test(priority = 1)
+	@Test(priority = 1,retryAnalyzer = genericutilities.Retry.class)
 	public void VerifyUSPAddedCustomerPresentInAdminPage() {
 		//COMMON DATA
 		String adminuserName=FileUtility.getProperty(configPath,"ADMINUSERNAME");
@@ -27,13 +27,12 @@ public class TC_002 extends BaseTest {
 
 		//LOGIN TO USER PAGE
 		LoginPage lp = new LoginPage(driver);
-		lp.setUsername(userUsername);
-		lp.setPassword(userPassword);
-		lp.clickLoginButton();
-		WebDriverUtility.acceptjSAlert(driver);
+		lp.enterLoginDetailsAndSubmit(userUsername, userPassword, driver);
+	
 
-		UserHomePage uhp = new UserHomePage(driver);
+		
 		//CHOOSE PRODUCT CATEGORY AND ENTER PRODUCT QUANTITY AND SUBMIT
+		UserHomePage uhp = new UserHomePage(driver);
 		uhp.clickOnProductCategory();
 		uhp.enterProductQuantity(quantity, productName, driver);
 		uhp.clickOnAddProduct(productName, driver);
@@ -44,19 +43,14 @@ public class TC_002 extends BaseTest {
 
 		//ADD A NEW CUSTOMER DETAILS AND SUBMIT
 		pos.enterCustomerDetails(driver,customerFirstName, customerLastName, customerPhoneNumber);
-		pos.clickSubmitAfterAddingCustDetails();
+		pos.submitAfterAddingCustDetails();
 		WebDriverUtility.acceptjSAlert(driver);
 
 		//LOGOUT OF USERPAGE
-		uhp.clickOnProfileIcon();
-		uhp.clickOnLogoutLink();
-		uhp.clickOnButton();
-	   /************************************************************************************/
-     	//LOGIN TO ADMIN PAGE
-		lp.setUsername(adminuserName);
-		lp.setPassword(adminPassword);
-		lp.clickLoginButton();
-		WebDriverUtility.acceptjSAlert(driver);
+		uhp.logoutOfUserPage();
+		/************************************************************************************/
+		//LOGIN TO ADMIN PAGE
+		lp.enterLoginDetailsAndSubmit(adminuserName, adminPassword, driver);
 
 		//CLICK ON CUSTOMER MODULE
 		CustomerPage cp = new CustomerPage(driver);
@@ -66,7 +60,8 @@ public class TC_002 extends BaseTest {
 		int totalPages=69;	
 		boolean flag=false;
 		String phoneNoFromTable="";
-		for(int p=1;p<=totalPages;p++) {
+		for(int p=1;p<=totalPages;p++) 
+		{
 			cp.clickOnActivePage();
 			int row=cp.getNoOfRowsInTable();
 			for(int r=1;r<=row;r++) {

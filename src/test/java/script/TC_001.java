@@ -4,6 +4,9 @@ import java.io.IOException;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import com.sun.net.httpserver.Authenticator.Retry;
+
 import genericutilities.BaseTest;
 import genericutilities.ExcelUtility;
 import genericutilities.FileUtility;
@@ -15,13 +18,12 @@ import page.UserHomePage;
 import page.UserPointOfSalePage;
 public class TC_001 extends BaseTest  {
 	
-	@Test(priority = 0)
+	@Test(priority = 0,retryAnalyzer = genericutilities.Retry.class)
 	public void verifyAddedCustomerShowsInUSPDropDown() throws FileNotFoundException, IOException, InterruptedException {
 		String adminuserName=FileUtility.getProperty(configPath,"ADMINUSERNAME");
 		String adminPassword=FileUtility.getProperty(configPath,"ADMINPASSWORD");
 		String userUsername=FileUtility.getProperty(configPath,"USERUSERNAME");
 		String userPassword=FileUtility.getProperty(configPath,"USERPASSWORD");
-
 		String customerFirstName=ExcelUtility.getCellData("customer", "./data/getData.xlsx", 0, 1);
 		String customerLastName=ExcelUtility.getCellData("customer", "./data/getData.xlsx", 1, 1);
 		String customerPhoneNumber=ExcelUtility.getCellData("customer", "./data/getData.xlsx", 2, 1);
@@ -30,29 +32,22 @@ public class TC_001 extends BaseTest  {
 
 		//LOGIN TO ADMIN PAGE
 		LoginPage lp = new LoginPage(driver);
-		lp.setUsername(adminuserName);
-		lp.setPassword(adminPassword);
-		lp.clickLoginButton();
-		WebDriverUtility.acceptjSAlert(driver);
+		lp.enterLoginDetailsAndSubmit(adminuserName, adminPassword, driver);
 
 		//ENTER CUSTOMER PAGE AND ADD A NEW CUSTOMER
 		CustomerPage cp = new CustomerPage(driver);
 		cp.clickOnCustomerIcon();
 		cp.clickOnAddCustomer();
-		cp.enterCustomerDetails(driver,customerFirstName, customerLastName, customerPhoneNumber);
-		cp.submitCustomerDetails();
+		cp.enterCustomerDetailsAndSubmit(driver,customerFirstName, customerLastName, customerPhoneNumber);
+	
 
 		//LOGOUT FROM ADMIN PAGE
 		AdminHomePage ahm = new AdminHomePage(driver);
-		ahm.clickOnProfileIcon();
-		ahm.clickOnLogoutLink();
-		ahm.clickOnButton();
+		ahm.logoutOfAdminPage();
 
 		//LOGIN USERPAGE
-		lp.setUsername(userUsername);
-		lp.setPassword(userPassword);
-		lp.clickLoginButton();
-		WebDriverUtility.acceptjSAlert(driver);
+		lp.enterLoginDetailsAndSubmit(userUsername, userPassword, driver);
+		
 
 		//CHOOSE PRODUCT CATEGORY AND CHOOSE PRODUCT QUANTITY AND SUBMIT
 		UserHomePage up = new UserHomePage(driver);

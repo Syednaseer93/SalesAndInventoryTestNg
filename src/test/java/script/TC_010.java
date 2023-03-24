@@ -9,7 +9,7 @@ import page.UserHomePage;
 import page.UserPointOfSalePage;
 
 public class TC_010 extends BaseTest{
-	@Test(priority = 3)
+	@Test(priority = 3,retryAnalyzer = genericutilities.Retry.class)
 	public void generateInvoice() {
 		String userUsername=FileUtility.getProperty(configPath,"USERUSERNAME");
 		String userPassword=FileUtility.getProperty(configPath,"USERPASSWORD");
@@ -21,10 +21,7 @@ public class TC_010 extends BaseTest{
 	
 		//LOGIN TO USER PAGE
 		LoginPage lp = new LoginPage(driver);
-		lp.setUsername(userUsername);
-		lp.setPassword(userPassword);
-		lp.clickLoginButton();
-		WebDriverUtility.acceptjSAlert(driver);
+		lp.enterLoginDetailsAndSubmit(userUsername, userPassword, driver);
 
 		//CHOOSE PRODUCT CATEGORY AND ENTER PRODUCT QUANTITY AND SUBMIT
 		UserHomePage uhp = new UserHomePage(driver);
@@ -37,8 +34,7 @@ public class TC_010 extends BaseTest{
 
 		//ADD A NEW CUSTOMER DETAILS AND SUBMIT
 		pos.enterCustomerDetails(driver, customerFirstName, customerLastName, customerPhoneNumber);
-		pos.clickSubmitAfterAddingCustDetails();
-		WebDriverUtility.acceptjSAlert(driver);
+
 		
 		//CHECK IF THE ADDED CUSTOMER IS SHOWING IN CUSTOMER LIST DROPDOWN AND SELECT THAT AND SUBMIT
 		pos.selectCustomer(customerFirstName+" "+customerLastName);

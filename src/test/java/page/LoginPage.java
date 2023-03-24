@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import genericutilities.WebDriverUtility;
+
 public class LoginPage {
 
 	public LoginPage(WebDriver driver){
@@ -32,5 +34,12 @@ public class LoginPage {
 	public void clickLoginButton() {
 		loginButton.click();
 	}
-
+	public void enterLoginDetailsAndSubmit(String un, String pw, WebDriver driver) {
+		loginUsername.sendKeys(un);
+		loginPassword.sendKeys(pw);
+		loginButton.click();
+		WebDriverUtility wu= new WebDriverUtility();
+		wu.acceptjSAlert(driver);
+		
+	}
 }

@@ -1,4 +1,4 @@
-package genericutilities;
+package DataProvider;
 
 import java.io.FileInputStream;
 import java.util.ArrayList;
@@ -9,16 +9,16 @@ import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-public class DataProviderMethod {
+public class dataProvider {
 	
 @DataProvider
-	public Iterator<Object[]> getMultipleData(/*String path, String sheet, int row, int column*/) {
+	public Iterator<Object[]> getMultipleData(String path, String sheet) {
 		ArrayList<Object[]> dataList = new ArrayList<Object[]>();
 		try {
-			Workbook wb=WorkbookFactory.create(new FileInputStream("./data/DP1.xlsx"));
+			Workbook wb=WorkbookFactory.create(new FileInputStream(path));
 
-			int rowCount=wb.getSheet("sheet1").getLastRowNum();
-			int colCount=wb.getSheet("sheet1").getRow(1).getLastCellNum();
+			int rowCount=wb.getSheet(sheet).getLastRowNum();
+			int colCount=wb.getSheet(sheet).getRow(1).getLastCellNum();
 
 			for(int i=0;i<=rowCount;i++) 
 			{
@@ -26,7 +26,7 @@ public class DataProviderMethod {
 
 				for(int j=0;j<colCount;j++) {
 					try {
-						String v=wb.getSheet("sheet1").getRow(i).getCell(j).getStringCellValue();
+						String v=wb.getSheet(sheet).getRow(i).getCell(j).getStringCellValue();
 						dataRow[j]=v;
 					}
 					catch(Exception e) {

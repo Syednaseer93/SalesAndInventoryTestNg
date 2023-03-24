@@ -59,7 +59,7 @@ public class UserPointOfSalePage extends WebDriverUtility {
 	public void submitCustomerDetails() {
 		submitCustomerDetails.click();
 	}
-	public void clickSubmitAfterAddingCustDetails() {
+	public void submitAfterAddingCustDetails() {
 		clickSubmitAfterCustDetails.click();
 	}
 	public void enterCustomerDetails(WebDriver driver,String fName, String lName, String phoneNo) {
@@ -71,6 +71,10 @@ public class UserPointOfSalePage extends WebDriverUtility {
 		
 		WebDriverUtility.waitUntilElementClickable(driver, customerPhoneNumber);
 		customerPhoneNumber.sendKeys(phoneNo);
+		
+		clickSubmitAfterCustDetails.click();
+		
+		WebDriverUtility.acceptjSAlert(driver);
 	}
 	public void chooseProductCategory() {
 		anyProductCategoryP1.click();

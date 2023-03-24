@@ -14,4 +14,10 @@ public interface IAutoConst {
 	String SCREENSHOT_FOLDER_FOR_REPORT="./../screenshot/";
 	String INPUTXL_PATH="./data/input.xlsx";
 	
+	String DBURL="jdbc:mysql://rmgtestingserver:3333/projects";
+	String DBUSERNAME="root@%";
+	String DBPASSWORD="root";
+	String PROPERTYFILEPATH="./data/config.properties";
+	String EXCELFILEPATH="./data/getData.xlsx";
+	
 }

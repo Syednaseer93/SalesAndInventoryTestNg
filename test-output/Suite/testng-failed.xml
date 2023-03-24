@@ -3,6 +3,24 @@
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Test(failed)">
     <classes>
+      <class name="script.TC_001">
+        <methods>
+          <include name="publishReport"/>
+          <include name="closeApp"/>
+          <include name="createReport"/>
+          <include name="verifyAddedCustomerShowsInUSPDropDown"/>
+          <include name="openApp"/>
+        </methods>
+      </class> <!-- script.TC_001 -->
+      <class name="script.TC_integeration_01">
+        <methods>
+          <include name="publishReport"/>
+          <include name="closeApp"/>
+          <include name="checkCustomerNamesAreSorted"/>
+          <include name="createReport"/>
+          <include name="openApp"/>
+        </methods>
+      </class> <!-- script.TC_integeration_01 -->
       <class name="script.TC_012">
         <methods>
           <include name="publishReport"/>
@@ -12,6 +30,33 @@
           <include name="createReport"/>
         </methods>
       </class> <!-- script.TC_012 -->
+      <class name="script.TC_003">
+        <methods>
+          <include name="publishReport"/>
+          <include name="closeApp"/>
+          <include name="verifyCustomerNameShowsInInvoice"/>
+          <include name="createReport"/>
+          <include name="openApp"/>
+        </methods>
+      </class> <!-- script.TC_003 -->
+      <class name="script.TC_002">
+        <methods>
+          <include name="publishReport"/>
+          <include name="closeApp"/>
+          <include name="openApp"/>
+          <include name="VerifyUSPAddedCustomerPresentInAdminPage"/>
+          <include name="createReport"/>
+        </methods>
+      </class> <!-- script.TC_002 -->
+      <class name="script.TC_010">
+        <methods>
+          <include name="publishReport"/>
+          <include name="closeApp"/>
+          <include name="generateInvoice"/>
+          <include name="openApp"/>
+          <include name="createReport"/>
+        </methods>
+      </class> <!-- script.TC_010 -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

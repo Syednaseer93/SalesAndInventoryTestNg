@@ -31,14 +31,10 @@ public class UserHomePage extends ExcelUtility{
 		KeyboardCategory.click();		
 	}
 
-	public void clickOnProfileIcon() {
-		profileIcon.click();
-	}
 
-	public void clickOnLogoutLink() {
+	public void logoutOfUserPage() {
+		profileIcon.click();
 		logoutLink.click();
-	}
-	public void clickOnButton() {
 		logoutButton.click();
 	}
 

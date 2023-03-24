@@ -45,16 +45,12 @@ public class AdminHomePage {
 		inventoryModule.click();
 	}
 	
-	public void clickOnProfileIcon() {
+	public void logoutOfAdminPage() {
 		profileIcon.click();
-	}
-	
-	public void clickOnLogoutLink() {
 		logoutLink.click();
-	}
-	public void clickOnButton() {
 		logoutButton.click();
 	}
+	
 	public void clickOnTransactionModule() {
 		transactionModule.click();
 	}
