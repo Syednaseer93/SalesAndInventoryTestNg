@@ -11,8 +11,8 @@ import org.testng.annotations.Test;
 
 public class IteratorOfAnObjectArray {
 	
-@DataProvider
-	public Iterator<Object[]> getMultipleData(String path, String sheet) {
+
+	public  Iterator<Object[]> getMultipleData(String path, String sheet) {
 		ArrayList<Object[]> dataList = new ArrayList<Object[]>();
 		try {
 			Workbook wb=WorkbookFactory.create(new FileInputStream(path));
@@ -42,9 +42,9 @@ public class IteratorOfAnObjectArray {
 			Iterator<Object[]> data = dataList.iterator();
 			return data;
 	}
-	@Test(dataProvider = "getMultipleData")
+	/*@Test(dataProvider = "getMultipleData")
 	public void useData(String a1,String b1, String b3) {
 		System.out.println(a1+b1+b3);
 		
-	}
+	}*/
 }

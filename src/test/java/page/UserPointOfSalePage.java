@@ -30,9 +30,7 @@ public class UserPointOfSalePage extends WebDriverUtility {
 		
 	@FindBy(xpath="//form[@action='cust_pos_trans.php?action=add']/div/input[@name='phonenumber']")
 	private WebElement customerPhoneNumber;
-	
-	@FindBy(xpath="//button[.='SUBMIT']")
-	private WebElement submitCustomerDetails;
+
 	
 	@FindBy(xpath="//form[@action='cust_pos_trans.php?action=add']/button[@type='submit']")
 	private WebElement clickSubmitAfterCustDetails;
@@ -49,15 +47,16 @@ public class UserPointOfSalePage extends WebDriverUtility {
 	@FindBy(xpath="//button[.='PROCEED TO PAYMENT']")
 	private WebElement proceedToPaymentButton;
 	
-	public Select selectCustomer(String text){
+	public Select selectCustomerByText(String text)
+	{
 		Select s = selectByVisibleText(selectCustomerDD, text);
 		return s;
 	}
 	public void clickOnAddCustomer() {
 		addCustomerIcon.click();
 	}
-	public void submitCustomerDetails() {
-		submitCustomerDetails.click();
+	public void submitOrder() {
+		submitOrder.click();
 	}
 	public void submitAfterAddingCustDetails() {
 		clickSubmitAfterCustDetails.click();

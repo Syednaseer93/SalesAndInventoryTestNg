@@ -5,13 +5,12 @@ import org.testng.annotations.Test;
 import genericutilities.BaseTest;
 import genericutilities.ExcelUtility;
 import genericutilities.FileUtility;
-import genericutilities.WebDriverUtility;
 import page.AdminHomePage;
 import page.LoginPage;
 import page.ProductPage;
 import page.UserPointOfSalePage;
 public class TC_012 extends BaseTest{
-	@Test(priority = 4,retryAnalyzer = genericutilities.Retry.class)
+	@Test(priority = 4, groups = "regression",retryAnalyzer = genericutilities.Retry.class)
 	public void verifyProductInInventoryAndUserPage(){
 		String adminuserName=FileUtility.getProperty(configPath,"ADMINUSERNAME");
 		String adminPassword=FileUtility.getProperty(configPath,"ADMINPASSWORD");

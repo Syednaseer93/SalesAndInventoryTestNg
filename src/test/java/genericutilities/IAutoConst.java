@@ -17,7 +17,7 @@ public interface IAutoConst {
 	String DBURL="jdbc:mysql://rmgtestingserver:3333/projects";
 	String DBUSERNAME="root@%";
 	String DBPASSWORD="root";
-	String PROPERTYFILEPATH="./data/config.properties";
+	String ConfigPath="./data/config.properties";
 	String EXCELFILEPATH="./data/getData.xlsx";
 	
 }

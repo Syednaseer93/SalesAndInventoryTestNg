@@ -9,7 +9,7 @@ import page.UserHomePage;
 import page.UserPointOfSalePage;
 
 public class TC_010 extends BaseTest{
-	@Test(priority = 3,retryAnalyzer = genericutilities.Retry.class)
+	@Test(priority = 3, groups = "regression",retryAnalyzer = genericutilities.Retry.class)
 	public void generateInvoice() {
 		String userUsername=FileUtility.getProperty(configPath,"USERUSERNAME");
 		String userPassword=FileUtility.getProperty(configPath,"USERPASSWORD");
@@ -18,14 +18,15 @@ public class TC_010 extends BaseTest{
 		String customerPhoneNumber=ExcelUtility.getCellData("customer", "./data/getData.xlsx", 2, 1);
 		String productName=ExcelUtility.getCellData("customer", "./data/getData.xlsx", 3, 1);
 		String productQuantity= ExcelUtility.getCellData("customer", "./data/getData.xlsx", 4, 1);
-	
+		String category=ExcelUtility.getCellData("customer", "./data/getData.xlsx", 6, 1);
+
 		//LOGIN TO USER PAGE
 		LoginPage lp = new LoginPage(driver);
 		lp.enterLoginDetailsAndSubmit(userUsername, userPassword, driver);
 
 		//CHOOSE PRODUCT CATEGORY AND ENTER PRODUCT QUANTITY AND SUBMIT
 		UserHomePage uhp = new UserHomePage(driver);
-		uhp.clickOnProductCategory();
+		uhp.chooseProductCategory(category, driver);
 		uhp.enterProductQuantity(productQuantity, productName, driver);
 		uhp.clickOnAddProduct(productName, driver);
 
@@ -37,8 +38,8 @@ public class TC_010 extends BaseTest{
 
 		
 		//CHECK IF THE ADDED CUSTOMER IS SHOWING IN CUSTOMER LIST DROPDOWN AND SELECT THAT AND SUBMIT
-		pos.selectCustomer(customerFirstName+" "+customerLastName);
-		pos.submitCustomerDetails();
+		pos.selectCustomerByText(customerFirstName+" "+customerLastName);
+		pos.submitOrder();
 		
 		//ENTER THE AMOUNT AND SUBMIT
 		pos.getTextOfProductAmount();

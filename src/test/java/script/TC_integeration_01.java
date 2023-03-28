@@ -1,19 +1,15 @@
 package script;
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Collections;
 import org.testng.annotations.Test;
-
 import com.aventstack.extentreports.Status;
-
 import genericutilities.BaseTest;
 import genericutilities.FileUtility;
-import genericutilities.WebDriverUtility;
 import page.CustomerPage;
 import page.LoginPage;
 public class TC_integeration_01 extends BaseTest{
 
-	@Test(priority = 5,retryAnalyzer = genericutilities.Retry.class)
+	@Test(priority = 5, groups = "regression",retryAnalyzer = genericutilities.Retry.class)
 	public void checkCustomerNamesAreSorted() {
 		extentTest.log(Status.INFO, "Enter the URL:");
 		String adminuserName=FileUtility.getProperty(configPath,"ADMINUSERNAME");
