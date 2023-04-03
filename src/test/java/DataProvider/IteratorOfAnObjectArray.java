@@ -10,15 +10,14 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 public class IteratorOfAnObjectArray {
-	
-
-	public  Iterator<Object[]> getMultipleData(String path, String sheet) {
+	@DataProvider
+	public  Iterator<Object[]> getMultipleData(/*String path, String sheet*/) {
 		ArrayList<Object[]> dataList = new ArrayList<Object[]>();
 		try {
-			Workbook wb=WorkbookFactory.create(new FileInputStream(path));
+			Workbook wb=WorkbookFactory.create(new FileInputStream("./data/TC_001.xlsx"));
 
-			int rowCount=wb.getSheet(sheet).getLastRowNum();
-			int colCount=wb.getSheet(sheet).getRow(1).getLastCellNum();
+			int rowCount=wb.getSheet("sheet1").getLastRowNum();
+			int colCount=wb.getSheet("sheet1").getRow(1).getLastCellNum();
 
 			for(int i=0;i<=rowCount;i++) 
 			{
@@ -26,7 +25,7 @@ public class IteratorOfAnObjectArray {
 
 				for(int j=0;j<colCount;j++) {
 					try {
-						String v=wb.getSheet(sheet).getRow(i).getCell(j).getStringCellValue();
+						String v=wb.getSheet("sheet1").getRow(i).getCell(j).getStringCellValue();
 						dataRow[j]=v;
 					}
 					catch(Exception e) {
@@ -39,12 +38,12 @@ public class IteratorOfAnObjectArray {
 		catch(Exception e) {
 			e.printStackTrace();
 		}
-			Iterator<Object[]> data = dataList.iterator();
-			return data;
+		Iterator<Object[]> data = dataList.iterator();
+		return data;
 	}
 	/*@Test(dataProvider = "getMultipleData")
 	public void useData(String a1,String b1, String b3) {
 		System.out.println(a1+b1+b3);
-		
+
 	}*/
 }

@@ -3,14 +3,14 @@
 <suite name="Suite" parallel="tests" thread-count="2">
 	<test name="Test1">
 		<parameter name="browser" value="firefox"></parameter>
-		<packages>
-			<package name="script"></package>
-		</packages>
+		<classes>
+			<class name="script.TC_002"></class>
+		</classes>
 	</test>
 	<test name="Test2">
 		<parameter name="browser" value="chrome"></parameter>
-		<packages>
-			<package name="script"></package>
-		</packages>
+		<classes>
+			<class name="script.TC_002"></class>
+		</classes>
 	</test>
 </suite> 

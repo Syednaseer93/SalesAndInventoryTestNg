@@ -42,7 +42,7 @@ public class dataProvider {
 			Iterator<Object[]> data = dataList.iterator();
 			return data;
 	}
-	@Test(dataProvider = "getMultipleData")
+	//@Test(dataProvider = "getMultipleData")
 	public void useData(String a1,String b1, String b3) {
 		System.out.println(a1+b1+b3);
 		

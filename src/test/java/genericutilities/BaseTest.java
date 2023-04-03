@@ -65,8 +65,8 @@ public class BaseTest implements IAutoConst {
 		String browser = FileUtility.getProperty(configPath,"BROWSER");
 		extentTest.log(Status.INFO, "Browser is: "+browser);
 
-
-		if(browser.equals("chrome"))
+//Remember to change browserName to browser if not cross browser
+		if(browserName.equals("chrome"))
 		{
 			WebDriverManager.chromedriver().setup();
 			String path=System.getProperty(CHROME_KEY);
@@ -78,7 +78,7 @@ public class BaseTest implements IAutoConst {
 			driver=new ChromeDriver(options);
 			driver.manage().window().maximize();
 		}
-		else
+		else if(browserName.equals("firefox"))
 		{
 			WebDriverManager.firefoxdriver().setup();
 			String path=System.getProperty(GECKO_KEY);

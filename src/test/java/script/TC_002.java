@@ -10,6 +10,7 @@ import page.LoginPage;
 import page.UserHomePage;
 import page.UserPointOfSalePage;
 public class TC_002 extends BaseTest {
+	
 	@Test(priority = 1, groups = "smoke",retryAnalyzer = genericutilities.Retry.class)
 	public void VerifyUSPAddedCustomerPresentInAdminPage() throws InterruptedException {
 		//COMMON DATA

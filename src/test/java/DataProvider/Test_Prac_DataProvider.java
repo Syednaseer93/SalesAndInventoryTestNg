@@ -16,7 +16,7 @@ public class Test_Prac_DataProvider {
     	Object[][] data = eu.getMultipleDataFromExcel("./data/DP1.xlsx", "sheet1");
     	return data;
 	}
-	@Test(dataProvider = "getData")
+	//@Test(dataProvider = "getData")
 	public void useData(String src,String dst, String loc) {
 		System.out.println(src+"---->"+dst+"------> "+loc);
 	}

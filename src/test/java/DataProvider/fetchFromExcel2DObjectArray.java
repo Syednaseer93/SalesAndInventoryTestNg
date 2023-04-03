@@ -26,7 +26,7 @@ public class fetchFromExcel2DObjectArray {
 		
 		return data;
 	}
-	@Test(dataProvider = "getData")
+	//@Test(dataProvider = "getData")
 	public void useData(String s1, String s2, String s3) {
 		System.out.println(s1+s2+s3);
 	}

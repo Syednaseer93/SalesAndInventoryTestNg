@@ -1,17 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite thread-count="6" parallel="methods" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="6" parallel="methods" name="Test(failed)">
+<suite thread-count="2" parallel="tests" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="2" parallel="tests" name="Test1(failed)">
+    <parameter name="browser" value="firefox"/>
     <classes>
-      <class name="script.TC_001">
+      <class name="script.TC_002">
         <methods>
           <include name="publishReport"/>
           <include name="closeApp"/>
-          <include name="openApp"/>
           <include name="createReport"/>
-          <include name="verifyAddedCustomerShowsInUSPDropDown"/>
+          <include name="openApp"/>
+          <include name="VerifyUSPAddedCustomerPresentInAdminPage"/>
         </methods>
-      </class> <!-- script.TC_001 -->
+      </class> <!-- script.TC_002 -->
     </classes>
-  </test> <!-- Test(failed) -->
+  </test> <!-- Test1(failed) -->
+  <test thread-count="2" parallel="tests" name="Test2(failed)">
+    <parameter name="browser" value="firefox"/>
+    <classes>
+      <class name="script.TC_002">
+        <methods>
+          <include name="publishReport"/>
+          <include name="closeApp"/>
+          <include name="createReport"/>
+          <include name="openApp"/>
+          <include name="VerifyUSPAddedCustomerPresentInAdminPage"/>
+        </methods>
+      </class> <!-- script.TC_002 -->
+    </classes>
+  </test> <!-- Test2(failed) -->
 </suite> <!-- Failed suite [Suite] -->

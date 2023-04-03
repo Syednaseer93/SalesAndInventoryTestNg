@@ -20,7 +20,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class DataPrac {
 
 	
-	@Test(dataProvider = "getMultipleData", dataProviderClass = IteratorOfAnObjectArray.class)
+	//@Test(dataProvider = "getMultipleData", dataProviderClass = IteratorOfAnObjectArray.class)
 	public void useData(String un,String pw, String key) throws InterruptedException {
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("--remote-allow-origins=*");

@@ -37,7 +37,6 @@ public class TC_003 extends BaseTest {
 		//SELECT ANY CUSTOMER FROM LIST AND SUBMIT
 		UserPointOfSalePage pos = new UserPointOfSalePage(driver);
 		pos.selectCustomerByText(customerFirstName+" "+customerLastName);	
-		Thread.sleep(2000);
 		pos.submitOrder();
 
 		//ENTER THE AMOUNT TO BE PAID AND SUBMIT

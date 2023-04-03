@@ -3,7 +3,13 @@
 <suite name="Suite" parallel="tests" thread-count="2">
 	<test name="Test1">
 		<classes>
-			<class name="script.TC_001"></class>
+			<class name="script.TC_010"></class>
+		</classes>
+	</test>
+	
+	<test name="Test2">
+		<classes>
+			<class name="script.TC_010"></class>
 		</classes>
 	</test>
 	

@@ -1,69 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results retried="1" ignored="10" total="17" passed="5" failed="1" skipped="0">
+<testng-results ignored="0" total="2" passed="0" failed="0" skipped="2">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-03-28T17:29:22 IST" name="Suite" finished-at="2023-03-28T17:30:37 IST" duration-ms="75847">
+  <suite started-at="2023-04-03T10:31:34 IST" name="Default suite" finished-at="2023-04-03T10:31:55 IST" duration-ms="20281">
     <groups>
-      <group name="regression">
-        <method signature="TC_010.generateInvoice()[pri:3, instance:script.TC_010@14028087]" name="generateInvoice" class="script.TC_010"/>
-        <method signature="TC_012.verifyProductInInventoryAndUserPage()[pri:4, instance:script.TC_012@cecf639]" name="verifyProductInInventoryAndUserPage" class="script.TC_012"/>
-        <method signature="TC_integeration_01.checkCustomerNamesAreSorted()[pri:5, instance:script.TC_integeration_01@1caa0244]" name="checkCustomerNamesAreSorted" class="script.TC_integeration_01"/>
-      </group> <!-- regression -->
       <group name="smoke">
-        <method signature="TC_001.verifyAddedCustomerShowsInUSPDropDown()[pri:0, instance:script.TC_001@5524cca1]" name="verifyAddedCustomerShowsInUSPDropDown" class="script.TC_001"/>
-        <method signature="TC_002.VerifyUSPAddedCustomerPresentInAdminPage()[pri:1, instance:script.TC_002@710c2b53]" name="VerifyUSPAddedCustomerPresentInAdminPage" class="script.TC_002"/>
-        <method signature="TC_003.verifyCustomerNameShowsInInvoice()[pri:2, instance:script.TC_003@5386659f]" name="verifyCustomerNameShowsInInvoice" class="script.TC_003"/>
+        <method signature="TC_001.verifyAddedCustomerShowsInUSPDropDown(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:script.TC_001@4be29ed9]" name="verifyAddedCustomerShowsInUSPDropDown" class="script.TC_001"/>
       </group> <!-- smoke -->
     </groups>
-    <test started-at="2023-03-28T17:29:22 IST" name="Test" finished-at="2023-03-28T17:30:37 IST" duration-ms="75847">
-      <class name="script.TC_010">
-        <test-method is-config="true" signature="openApp(java.lang.reflect.Method,java.lang.String,java.lang.String)[pri:0, instance:script.TC_010@14028087]" started-at="2023-03-28T17:29:22 IST" name="openApp" finished-at="2023-03-28T17:29:34 IST" duration-ms="12739" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void script.TC_010.generateInvoice()]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[config.properties]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- openApp -->
-        <test-method signature="generateInvoice()[pri:3, instance:script.TC_010@14028087]" started-at="2023-03-28T17:29:34 IST" name="generateInvoice" finished-at="2023-03-28T17:30:05 IST" duration-ms="30321" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- generateInvoice -->
-        <test-method is-config="true" signature="closeApp(org.testng.ITestResult)[pri:0, instance:script.TC_010@14028087]" started-at="2023-03-28T17:30:05 IST" name="closeApp" finished-at="2023-03-28T17:30:16 IST" duration-ms="11023" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=generateInvoice status=SUCCESS method=TC_010.generateInvoice()[pri:3, instance:script.TC_010@14028087] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- closeApp -->
-      </class> <!-- script.TC_010 -->
+    <test started-at="2023-04-03T10:31:34 IST" name="Default test" finished-at="2023-04-03T10:31:55 IST" duration-ms="20281">
       <class name="script.TC_001">
-        <test-method is-config="true" signature="createReport()[pri:0, instance:script.TC_001@5524cca1]" started-at="2023-03-28T17:29:21 IST" name="createReport" finished-at="2023-03-28T17:29:22 IST" duration-ms="542" status="PASS">
+        <test-method is-config="true" signature="createReport()[pri:0, instance:script.TC_001@4be29ed9]" started-at="2023-04-03T10:31:34 IST" name="createReport" finished-at="2023-04-03T10:31:34 IST" duration-ms="648" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createReport -->
-        <test-method is-config="true" signature="openApp(java.lang.reflect.Method,java.lang.String,java.lang.String)[pri:0, instance:script.TC_001@5524cca1]" started-at="2023-03-28T17:29:22 IST" name="openApp" finished-at="2023-03-28T17:29:36 IST" duration-ms="14753" status="PASS">
+        <test-method is-config="true" signature="openApp(java.lang.reflect.Method,java.lang.String,java.lang.String)[pri:0, instance:script.TC_001@4be29ed9]" started-at="2023-04-03T10:31:37 IST" name="openApp" finished-at="2023-04-03T10:31:55 IST" duration-ms="18002" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void script.TC_001.verifyAddedCustomerShowsInUSPDropDown() throws java.io.FileNotFoundException,java.io.IOException,java.lang.InterruptedException]]>
+                <![CDATA[public void script.TC_001.verifyAddedCustomerShowsInUSPDropDown(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String) throws java.io.FileNotFoundException,java.io.IOException,java.lang.InterruptedException]]>
               </value>
             </param>
             <param index="1">
@@ -77,279 +32,350 @@
               </value>
             </param>
           </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- openApp -->
-        <test-method retried="true" signature="verifyAddedCustomerShowsInUSPDropDown()[pri:0, instance:script.TC_001@5524cca1]" started-at="2023-03-28T17:29:36 IST" name="verifyAddedCustomerShowsInUSPDropDown" finished-at="2023-03-28T17:30:16 IST" duration-ms="39891" status="SKIP">
-          <exception class="java.lang.AssertionError">
+          <exception class="org.openqa.selenium.remote.UnreachableBrowserException">
             <message>
-              <![CDATA[expected [BangaloreLj lifeYC] but found [BangaloreLj lifeYCNfs]]]>
+              <![CDATA[Error communicating with the remote browser. It may have died.
+Build info: version: '4.3.0', revision: 'a4995e2c09*'
+System info: host: 'DESKTOP-J9JQ713', ip: '192.168.135.41', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.6'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [437acd9b49ae260f726b6e13d3e70585, get {url=http://rmgtestingserver/domain/Sales_And_Inventory_System/pages/login.php}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 111.0.5563.146, chrome: {chromedriverVersion: 111.0.5563.64 (c710e93d5b63..., userDataDir: C:\Windows\TEMP\scoped_dir1...}, goog:chromeOptions: {debuggerAddress: localhost:52125}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:52125/devtoo..., se:cdpVersion: 111.0.5563.146, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 437acd9b49ae260f726b6e13d3e70585]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [BangaloreLj lifeYC] but found [BangaloreLj lifeYCNfs]
-at org.testng.Assert.fail(Assert.java:110)
-at org.testng.Assert.failNotEquals(Assert.java:1413)
-at org.testng.Assert.assertEqualsImpl(Assert.java:149)
-at org.testng.Assert.assertEquals(Assert.java:131)
-at org.testng.Assert.assertEquals(Assert.java:655)
-at org.testng.Assert.assertEquals(Assert.java:665)
-at script.TC_001.verifyAddedCustomerShowsInUSPDropDown(TC_001.java:69)
+              <![CDATA[org.openqa.selenium.remote.UnreachableBrowserException: Error communicating with the remote browser. It may have died.
+Build info: version: '4.3.0', revision: 'a4995e2c09*'
+System info: host: 'DESKTOP-J9JQ713', ip: '192.168.135.41', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.6'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [437acd9b49ae260f726b6e13d3e70585, get {url=http://rmgtestingserver/domain/Sales_And_Inventory_System/pages/login.php}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 111.0.5563.146, chrome: {chromedriverVersion: 111.0.5563.64 (c710e93d5b63..., userDataDir: C:\Windows\TEMP\scoped_dir1...}, goog:chromeOptions: {debuggerAddress: localhost:52125}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:52125/devtoo..., se:cdpVersion: 111.0.5563.146, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 437acd9b49ae260f726b6e13d3e70585
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:593)
+at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:332)
+at genericutilities.BaseTest.openApp(BaseTest.java:105)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 at java.base/java.lang.reflect.Method.invoke(Method.java:568)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:361)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:296)
+at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:816)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:590)
 at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
 at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
 at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
 at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
 at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
 at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:806)
+at org.testng.TestRunner.run(TestRunner.java:601)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:433)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:427)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:387)
+at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+at org.testng.TestNG.runSuites(TestNG.java:1099)
+at org.testng.TestNG.run(TestNG.java:1067)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: java.io.UncheckedIOException: java.net.SocketException: Connection reset
+at org.openqa.selenium.remote.http.netty.NettyHttpHandler.makeCall(NettyHttpHandler.java:73)
+at org.openqa.selenium.remote.http.AddSeleniumUserAgent.lambda$apply$0(AddSeleniumUserAgent.java:42)
+at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:56)
+at org.openqa.selenium.remote.http.netty.NettyHttpHandler.execute(NettyHttpHandler.java:49)
+at org.openqa.selenium.remote.http.AddSeleniumUserAgent.lambda$apply$0(AddSeleniumUserAgent.java:42)
+at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:56)
+at org.openqa.selenium.remote.http.netty.NettyClient.execute(NettyClient.java:98)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:181)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:569)
+... 34 more
+Caused by: java.net.SocketException: Connection reset
+at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394)
+at java.base/sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:426)
+at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:258)
+at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:357)
+at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:722)
+at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:658)
+at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:584)
+at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:496)
+at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
 at java.base/java.lang.Thread.run(Thread.java:833)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+          </exception> <!-- org.openqa.selenium.remote.UnreachableBrowserException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyAddedCustomerShowsInUSPDropDown -->
-        <test-method is-config="true" signature="closeApp(org.testng.ITestResult)[pri:0, instance:script.TC_001@5524cca1]" started-at="2023-03-28T17:30:16 IST" name="closeApp" finished-at="2023-03-28T17:30:24 IST" duration-ms="7409" status="PASS">
+        </test-method> <!-- openApp -->
+        <test-method signature="verifyAddedCustomerShowsInUSPDropDown(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:script.TC_001@4be29ed9]" started-at="2023-04-03T10:31:55 IST" name="verifyAddedCustomerShowsInUSPDropDown" data-provider="getMultipleData" finished-at="2023-04-03T10:31:55 IST" duration-ms="0" status="SKIP">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=verifyAddedCustomerShowsInUSPDropDown status=SKIP method=TC_001.verifyAddedCustomerShowsInUSPDropDown()[pri:0, instance:script.TC_001@5524cca1] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- closeApp -->
-        <test-method is-config="true" signature="openApp(java.lang.reflect.Method,java.lang.String,java.lang.String)[pri:0, instance:script.TC_001@5524cca1]" started-at="2023-03-28T17:30:24 IST" name="openApp" finished-at="2023-03-28T17:30:26 IST" duration-ms="2175" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void script.TC_001.verifyAddedCustomerShowsInUSPDropDown() throws java.io.FileNotFoundException,java.io.IOException,java.lang.InterruptedException]]>
+                <![CDATA[Bangaloreoiu]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[config.properties]]>
+                <![CDATA[Lifevb]]>
               </value>
             </param>
             <param index="2">
               <value>
-                <![CDATA[chrome]]>
+                <![CDATA[9341224577]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Newmen E120360]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[6]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Monitor]]>
               </value>
             </param>
           </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- openApp -->
-        <test-method signature="verifyAddedCustomerShowsInUSPDropDown()[pri:0, instance:script.TC_001@5524cca1]" started-at="2023-03-28T17:30:26 IST" name="verifyAddedCustomerShowsInUSPDropDown" finished-at="2023-03-28T17:30:37 IST" duration-ms="11055" status="FAIL">
-          <exception class="java.lang.AssertionError">
+          <exception class="org.openqa.selenium.remote.UnreachableBrowserException">
             <message>
-              <![CDATA[expected [BangaloretW lifeic] but found [BangaloretW lifeicNfs]]]>
+              <![CDATA[Error communicating with the remote browser. It may have died.
+Build info: version: '4.3.0', revision: 'a4995e2c09*'
+System info: host: 'DESKTOP-J9JQ713', ip: '192.168.135.41', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.6'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [437acd9b49ae260f726b6e13d3e70585, get {url=http://rmgtestingserver/domain/Sales_And_Inventory_System/pages/login.php}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 111.0.5563.146, chrome: {chromedriverVersion: 111.0.5563.64 (c710e93d5b63..., userDataDir: C:\Windows\TEMP\scoped_dir1...}, goog:chromeOptions: {debuggerAddress: localhost:52125}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:52125/devtoo..., se:cdpVersion: 111.0.5563.146, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 437acd9b49ae260f726b6e13d3e70585]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [BangaloretW lifeic] but found [BangaloretW lifeicNfs]
-at org.testng.Assert.fail(Assert.java:110)
-at org.testng.Assert.failNotEquals(Assert.java:1413)
-at org.testng.Assert.assertEqualsImpl(Assert.java:149)
-at org.testng.Assert.assertEquals(Assert.java:131)
-at org.testng.Assert.assertEquals(Assert.java:655)
-at org.testng.Assert.assertEquals(Assert.java:665)
-at script.TC_001.verifyAddedCustomerShowsInUSPDropDown(TC_001.java:69)
+              <![CDATA[org.openqa.selenium.remote.UnreachableBrowserException: Error communicating with the remote browser. It may have died.
+Build info: version: '4.3.0', revision: 'a4995e2c09*'
+System info: host: 'DESKTOP-J9JQ713', ip: '192.168.135.41', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.6'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [437acd9b49ae260f726b6e13d3e70585, get {url=http://rmgtestingserver/domain/Sales_And_Inventory_System/pages/login.php}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 111.0.5563.146, chrome: {chromedriverVersion: 111.0.5563.64 (c710e93d5b63..., userDataDir: C:\Windows\TEMP\scoped_dir1...}, goog:chromeOptions: {debuggerAddress: localhost:52125}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:52125/devtoo..., se:cdpVersion: 111.0.5563.146, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 437acd9b49ae260f726b6e13d3e70585
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:593)
+at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:332)
+at genericutilities.BaseTest.openApp(BaseTest.java:105)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 at java.base/java.lang.reflect.Method.invoke(Method.java:568)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
-at org.testng.internal.invokers.TestInvoker.retryFailed(TestInvoker.java:263)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:62)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:361)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:296)
+at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:816)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:590)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
 at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
 at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
 at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
 at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:806)
+at org.testng.TestRunner.run(TestRunner.java:601)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:433)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:427)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:387)
+at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+at org.testng.TestNG.runSuites(TestNG.java:1099)
+at org.testng.TestNG.run(TestNG.java:1067)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: java.io.UncheckedIOException: java.net.SocketException: Connection reset
+at org.openqa.selenium.remote.http.netty.NettyHttpHandler.makeCall(NettyHttpHandler.java:73)
+at org.openqa.selenium.remote.http.AddSeleniumUserAgent.lambda$apply$0(AddSeleniumUserAgent.java:42)
+at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:56)
+at org.openqa.selenium.remote.http.netty.NettyHttpHandler.execute(NettyHttpHandler.java:49)
+at org.openqa.selenium.remote.http.AddSeleniumUserAgent.lambda$apply$0(AddSeleniumUserAgent.java:42)
+at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:56)
+at org.openqa.selenium.remote.http.netty.NettyClient.execute(NettyClient.java:98)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:181)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:569)
+... 34 more
+Caused by: java.net.SocketException: Connection reset
+at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394)
+at java.base/sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:426)
+at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:258)
+at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:357)
+at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:722)
+at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:658)
+at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:584)
+at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:496)
+at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
 at java.base/java.lang.Thread.run(Thread.java:833)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+          </exception> <!-- org.openqa.selenium.remote.UnreachableBrowserException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyAddedCustomerShowsInUSPDropDown -->
-        <test-method is-config="true" signature="closeApp(org.testng.ITestResult)[pri:0, instance:script.TC_001@5524cca1]" started-at="2023-03-28T17:30:37 IST" name="closeApp" finished-at="2023-03-28T17:30:37 IST" duration-ms="480" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verifyAddedCustomerShowsInUSPDropDown status=FAILURE method=TC_001.verifyAddedCustomerShowsInUSPDropDown()[pri:0, instance:script.TC_001@5524cca1] output={null}]]]>
-              </value>
-            </param>
-          </params>
+        <test-method is-config="true" signature="closeApp(org.testng.ITestResult)[pri:0, instance:script.TC_001@4be29ed9]" started-at="2023-04-03T10:31:55 IST" name="closeApp" finished-at="2023-04-03T10:31:55 IST" duration-ms="0" status="SKIP">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeApp -->
-        <test-method is-config="true" signature="publishReport()[pri:0, instance:script.TC_001@5524cca1]" started-at="2023-03-28T17:30:37 IST" name="publishReport" finished-at="2023-03-28T17:30:38 IST" duration-ms="497" status="PASS">
+        <test-method is-config="true" signature="openApp(java.lang.reflect.Method,java.lang.String,java.lang.String)[pri:0, instance:script.TC_001@4be29ed9]" started-at="2023-04-03T10:31:55 IST" name="openApp" finished-at="2023-04-03T10:31:55 IST" duration-ms="0" status="SKIP">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openApp -->
+        <test-method signature="verifyAddedCustomerShowsInUSPDropDown(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:script.TC_001@4be29ed9]" started-at="2023-04-03T10:31:55 IST" name="verifyAddedCustomerShowsInUSPDropDown" data-provider="getMultipleData" finished-at="2023-04-03T10:31:55 IST" duration-ms="0" status="SKIP">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Bangaloreqwe]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Lifeyalk]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[9764459999]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Newmen E120360]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[8]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Monitor]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.openqa.selenium.remote.UnreachableBrowserException">
+            <message>
+              <![CDATA[Error communicating with the remote browser. It may have died.
+Build info: version: '4.3.0', revision: 'a4995e2c09*'
+System info: host: 'DESKTOP-J9JQ713', ip: '192.168.135.41', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.6'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [437acd9b49ae260f726b6e13d3e70585, get {url=http://rmgtestingserver/domain/Sales_And_Inventory_System/pages/login.php}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 111.0.5563.146, chrome: {chromedriverVersion: 111.0.5563.64 (c710e93d5b63..., userDataDir: C:\Windows\TEMP\scoped_dir1...}, goog:chromeOptions: {debuggerAddress: localhost:52125}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:52125/devtoo..., se:cdpVersion: 111.0.5563.146, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 437acd9b49ae260f726b6e13d3e70585]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.remote.UnreachableBrowserException: Error communicating with the remote browser. It may have died.
+Build info: version: '4.3.0', revision: 'a4995e2c09*'
+System info: host: 'DESKTOP-J9JQ713', ip: '192.168.135.41', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.6'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [437acd9b49ae260f726b6e13d3e70585, get {url=http://rmgtestingserver/domain/Sales_And_Inventory_System/pages/login.php}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 111.0.5563.146, chrome: {chromedriverVersion: 111.0.5563.64 (c710e93d5b63..., userDataDir: C:\Windows\TEMP\scoped_dir1...}, goog:chromeOptions: {debuggerAddress: localhost:52125}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:52125/devtoo..., se:cdpVersion: 111.0.5563.146, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 437acd9b49ae260f726b6e13d3e70585
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:593)
+at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:332)
+at genericutilities.BaseTest.openApp(BaseTest.java:105)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:361)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:296)
+at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:816)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:590)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:806)
+at org.testng.TestRunner.run(TestRunner.java:601)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:433)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:427)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:387)
+at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+at org.testng.TestNG.runSuites(TestNG.java:1099)
+at org.testng.TestNG.run(TestNG.java:1067)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: java.io.UncheckedIOException: java.net.SocketException: Connection reset
+at org.openqa.selenium.remote.http.netty.NettyHttpHandler.makeCall(NettyHttpHandler.java:73)
+at org.openqa.selenium.remote.http.AddSeleniumUserAgent.lambda$apply$0(AddSeleniumUserAgent.java:42)
+at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:56)
+at org.openqa.selenium.remote.http.netty.NettyHttpHandler.execute(NettyHttpHandler.java:49)
+at org.openqa.selenium.remote.http.AddSeleniumUserAgent.lambda$apply$0(AddSeleniumUserAgent.java:42)
+at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:56)
+at org.openqa.selenium.remote.http.netty.NettyClient.execute(NettyClient.java:98)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:181)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:569)
+... 34 more
+Caused by: java.net.SocketException: Connection reset
+at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394)
+at java.base/sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:426)
+at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:258)
+at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:357)
+at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:722)
+at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:658)
+at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:584)
+at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:496)
+at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+at java.base/java.lang.Thread.run(Thread.java:833)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.remote.UnreachableBrowserException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyAddedCustomerShowsInUSPDropDown -->
+        <test-method is-config="true" signature="closeApp(org.testng.ITestResult)[pri:0, instance:script.TC_001@4be29ed9]" started-at="2023-04-03T10:31:55 IST" name="closeApp" finished-at="2023-04-03T10:31:55 IST" duration-ms="0" status="SKIP">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeApp -->
+        <test-method is-config="true" signature="publishReport()[pri:0, instance:script.TC_001@4be29ed9]" started-at="2023-04-03T10:31:55 IST" name="publishReport" finished-at="2023-04-03T10:31:56 IST" duration-ms="922" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- publishReport -->
       </class> <!-- script.TC_001 -->
-      <class name="script.TC_integeration_01">
-        <test-method is-config="true" signature="openApp(java.lang.reflect.Method,java.lang.String,java.lang.String)[pri:0, instance:script.TC_integeration_01@1caa0244]" started-at="2023-03-28T17:29:22 IST" name="openApp" finished-at="2023-03-28T17:29:37 IST" duration-ms="14960" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void script.TC_integeration_01.checkCustomerNamesAreSorted()]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[config.properties]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- openApp -->
-        <test-method signature="checkCustomerNamesAreSorted()[pri:5, instance:script.TC_integeration_01@1caa0244]" started-at="2023-03-28T17:29:37 IST" name="checkCustomerNamesAreSorted" finished-at="2023-03-28T17:29:56 IST" duration-ms="18905" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- checkCustomerNamesAreSorted -->
-        <test-method is-config="true" signature="closeApp(org.testng.ITestResult)[pri:0, instance:script.TC_integeration_01@1caa0244]" started-at="2023-03-28T17:29:56 IST" name="closeApp" finished-at="2023-03-28T17:29:56 IST" duration-ms="786" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=checkCustomerNamesAreSorted status=SUCCESS method=TC_integeration_01.checkCustomerNamesAreSorted()[pri:5, instance:script.TC_integeration_01@1caa0244] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- closeApp -->
-      </class> <!-- script.TC_integeration_01 -->
-      <class name="script.TC_012">
-        <test-method is-config="true" signature="openApp(java.lang.reflect.Method,java.lang.String,java.lang.String)[pri:0, instance:script.TC_012@cecf639]" started-at="2023-03-28T17:29:22 IST" name="openApp" finished-at="2023-03-28T17:29:33 IST" duration-ms="11594" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void script.TC_012.verifyProductInInventoryAndUserPage()]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[config.properties]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- openApp -->
-        <test-method signature="verifyProductInInventoryAndUserPage()[pri:4, instance:script.TC_012@cecf639]" started-at="2023-03-28T17:29:33 IST" name="verifyProductInInventoryAndUserPage" finished-at="2023-03-28T17:30:20 IST" duration-ms="46464" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyProductInInventoryAndUserPage -->
-        <test-method is-config="true" signature="closeApp(org.testng.ITestResult)[pri:0, instance:script.TC_012@cecf639]" started-at="2023-03-28T17:30:20 IST" name="closeApp" finished-at="2023-03-28T17:30:23 IST" duration-ms="3173" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verifyProductInInventoryAndUserPage status=SUCCESS method=TC_012.verifyProductInInventoryAndUserPage()[pri:4, instance:script.TC_012@cecf639] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- closeApp -->
-      </class> <!-- script.TC_012 -->
-      <class name="script.TC_002">
-        <test-method is-config="true" signature="openApp(java.lang.reflect.Method,java.lang.String,java.lang.String)[pri:0, instance:script.TC_002@710c2b53]" started-at="2023-03-28T17:29:22 IST" name="openApp" finished-at="2023-03-28T17:29:33 IST" duration-ms="11811" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void script.TC_002.VerifyUSPAddedCustomerPresentInAdminPage() throws java.lang.InterruptedException]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[config.properties]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- openApp -->
-        <test-method signature="VerifyUSPAddedCustomerPresentInAdminPage()[pri:1, instance:script.TC_002@710c2b53]" started-at="2023-03-28T17:29:33 IST" name="VerifyUSPAddedCustomerPresentInAdminPage" finished-at="2023-03-28T17:30:28 IST" duration-ms="54571" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- VerifyUSPAddedCustomerPresentInAdminPage -->
-        <test-method is-config="true" signature="closeApp(org.testng.ITestResult)[pri:0, instance:script.TC_002@710c2b53]" started-at="2023-03-28T17:30:28 IST" name="closeApp" finished-at="2023-03-28T17:30:29 IST" duration-ms="607" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=VerifyUSPAddedCustomerPresentInAdminPage status=SUCCESS method=TC_002.VerifyUSPAddedCustomerPresentInAdminPage()[pri:1, instance:script.TC_002@710c2b53] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- closeApp -->
-      </class> <!-- script.TC_002 -->
-      <class name="script.TC_003">
-        <test-method is-config="true" signature="openApp(java.lang.reflect.Method,java.lang.String,java.lang.String)[pri:0, instance:script.TC_003@5386659f]" started-at="2023-03-28T17:29:22 IST" name="openApp" finished-at="2023-03-28T17:29:34 IST" duration-ms="12515" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void script.TC_003.verifyCustomerNameShowsInInvoice() throws java.lang.InterruptedException]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[config.properties]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- openApp -->
-        <test-method signature="verifyCustomerNameShowsInInvoice()[pri:2, instance:script.TC_003@5386659f]" started-at="2023-03-28T17:29:34 IST" name="verifyCustomerNameShowsInInvoice" finished-at="2023-03-28T17:30:23 IST" duration-ms="48787" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyCustomerNameShowsInInvoice -->
-        <test-method is-config="true" signature="closeApp(org.testng.ITestResult)[pri:0, instance:script.TC_003@5386659f]" started-at="2023-03-28T17:30:23 IST" name="closeApp" finished-at="2023-03-28T17:30:25 IST" duration-ms="1562" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verifyCustomerNameShowsInInvoice status=SUCCESS method=TC_003.verifyCustomerNameShowsInInvoice()[pri:2, instance:script.TC_003@5386659f] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- closeApp -->
-      </class> <!-- script.TC_003 -->
-    </test> <!-- Test -->
-  </suite> <!-- Suite -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>
