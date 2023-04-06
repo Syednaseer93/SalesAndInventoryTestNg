@@ -58,7 +58,7 @@ public class TC_003 extends BaseTest {
 
 		//NAVIGATE EVERY PAGE TO CHECK FOR TRANSACTION NUMBER(PHONE NUMBER)
 		TransactionPage tp = new TransactionPage(driver);
-		int totalPages=30;	
+		int totalPages=40;	
 		boolean flag=false;
 		String customerNameFromTable="";
 		for(int p=1;p<=totalPages;p++) {

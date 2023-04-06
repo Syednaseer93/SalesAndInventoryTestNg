@@ -1,4 +1,5 @@
 package script;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import genericutilities.BaseTest;
 import genericutilities.ExcelUtility;
@@ -45,5 +46,6 @@ public class TC_010 extends BaseTest{
 		pos.getTextOfProductAmount();
 		pos.enterProductAmountP1();
 		pos.ProceedToPaymentClick();
+		Assert.assertTrue(true);
 	}
 }

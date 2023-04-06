@@ -3,15 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="script.TC_001">
+      <class name="script.TC_010">
         <methods>
           <include name="publishReport"/>
           <include name="closeApp"/>
-          <include name="verifyAddedCustomerShowsInUSPDropDown"/>
-          <include name="createReport"/>
+          <include name="generateInvoice"/>
           <include name="openApp"/>
+          <include name="createReport"/>
         </methods>
-      </class> <!-- script.TC_001 -->
+      </class> <!-- script.TC_010 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

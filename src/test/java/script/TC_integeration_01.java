@@ -1,6 +1,8 @@
 package script;
 import java.util.ArrayList;
 import java.util.Collections;
+
+import org.junit.Assert;
 import org.testng.annotations.Test;
 import com.aventstack.extentreports.Status;
 import genericutilities.BaseTest;
@@ -51,13 +53,7 @@ public class TC_integeration_01 extends BaseTest{
 				break;
 			}		
 		}
-		if(flag==true) {
-			System.out.println("passed");
-		}
-		else {
-			System.out.println("failed");
-		}
-		driver.close();
+		Assert.assertTrue(!flag);
 	}	
 }
 

@@ -47,7 +47,7 @@ public class TC_012 extends BaseTest{
 		ahm.clickOnInventoryModule();
 
 		//SEARCH FOR THE PRODUCT CREATED IN ALL THE PAGES
-		int totalPages=12;	
+		int totalPages=26;	
 		boolean flag=false;
 		for(int p=1;p<=totalPages;p++) {
 			pp.clickOnActivePage();

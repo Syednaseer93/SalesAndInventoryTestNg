@@ -30,7 +30,6 @@ public class TC_002 extends BaseTest {
 		LoginPage lp = new LoginPage(driver);
 		lp.enterLoginDetailsAndSubmit(userUsername, userPassword, driver);
 	
-
 		//CHOOSE PRODUCT CATEGORY AND ENTER PRODUCT QUANTITY AND SUBMIT
 		UserHomePage uhp = new UserHomePage(driver);
 		uhp.chooseProductCategory(category, driver);
@@ -55,7 +54,7 @@ public class TC_002 extends BaseTest {
 		cp.clickOnCustomerIcon();
 
 		//NAVIGATE TO EVERY PAGE AND CHECK FOR ADDED CUSTOMER'S NAME
-		int totalPages=69;
+		int totalPages=125;
 		boolean flag=false;
 		String phoneNoFromTable="";
 		for(int p=1;p<=totalPages;p++)
